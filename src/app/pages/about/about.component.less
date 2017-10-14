@@ -1,0 +1,71 @@
+@import './../../../styles/styles.less';
+@import './../../../styles/animations/blink.less';
+
+
+#header-section {
+    background-image: url(/assets/images/about/header.jpeg);
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+
+    .container,
+    .row {
+        height: 100%;
+    }
+
+    .overlay {
+        background-color: fade(@color-one, 90%);
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+    }
+
+    .title-container {
+        margin-bottom: 0;
+
+        h1 {
+            color: #fff;
+            font-size: 50px;
+            margin-bottom: 60px;
+
+            .blinking-cursor {
+                -webkit-animation: 1s blink step-end infinite;
+                -moz-animation: 1s blink step-end infinite;
+                -ms-animation: 1s blink step-end infinite;
+                -o-animation: 1s blink step-end infinite;
+                animation: 1s blink step-end infinite;
+            }
+
+            @media (max-width : 600px) {
+                font-size: 20px;
+                margin-bottom: 10px;
+
+                &:first-child {
+                    font-size: 40px;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}
+
+#skills-section {
+    .title-container {
+
+    }
+
+    .content-container {
+        text-align: center;
+        padding: 30px 40px;
+
+        img {
+            width: 150px;
+            margin-bottom: 30px
+        }
+
+        .title {
+            font-weight: @font-weight-semi-bold;
+            margin-bottom: 20px;
+        }
+    }
+}

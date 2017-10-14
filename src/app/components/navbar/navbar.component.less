@@ -32,9 +32,9 @@
         .navbar-nav {
             .nav-item {
                 border-bottom: 2px solid transparent;
-                padding-left: .75rem;
-                padding-right: .75rem;
-
+                padding-left: .5rem;
+                padding-right: .5rem;
+                margin: 0 5px;
                 .nav-link {
                     color: @txt-color;
                 }
@@ -105,6 +105,13 @@
 }
 
 .navbar.solid {
+    box-shadow: @box-shadow-base;
     .navbar(#fff, @text-color);
+
+    .navbar-brand {
+        a {
+            color: @color-two;
+        }
+    }
 }
 

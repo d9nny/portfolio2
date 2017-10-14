@@ -1,4 +1,6 @@
-<nav class="navbar transparent navbar-toggleable-sm fixed-top">
+<nav class="navbar navbar-toggleable-sm fixed-top"
+     [ngClass]="{'solid': navbarState === 'solid',
+                 'transparent': navbarState === 'transparent'}">
 
     <div class="navbar-brand">
         <a href="/">< Dan Wheeler /></a>

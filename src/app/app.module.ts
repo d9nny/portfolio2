@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ComponentsModule } from './components/components.module';
+import { PagesModule } from './pages/pages.module';
 
 import { AppComponent } from './app.component';
 
@@ -21,6 +22,7 @@ import { AppComponent } from './app.component';
         HttpModule,
         NgbModule.forRoot(),
         ComponentsModule,
+        PagesModule,
         RouterModule.forRoot([]),
     ],
     providers: [],
