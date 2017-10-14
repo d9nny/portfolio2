@@ -1,0 +1,42 @@
+<nav class="navbar transparent navbar-toggleable-sm fixed-top">
+
+    <div class="navbar-brand">
+        <a href="/">< Dan Wheeler /></a>
+    </div>
+
+    <button class="btn navbar-toggler navbar-toggler-right"
+        (click)="isCollapsed = !isCollapsed">
+        <i class="fa fa-bars"></i>
+    </button>
+
+    <div *ngIf="isCollapsed"
+         class="overlay"></div>
+
+    <div class="collapse navbar-collapse"
+         [ngbCollapse]="!isCollapsed">
+
+        <div *ngIf="isCollapsed"
+             class="navbar-brand">
+            <a href="/">< Dan Wheeler /></a>
+        </div>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"
+                routerLink="/about"
+                routerLinkActive="active">
+                <a class="nav-link"
+                   translate>About</a></li>
+
+            <li class="nav-item"
+                routerLink="/page3"
+                routerLinkActive="active">
+                <a class="nav-link"
+                   translate>Page 2</a></li>
+
+            <li class="nav-item"
+                routerLink="/page3"
+                routerLinkActive="active">
+                <a class="nav-link"
+                   translate>Page 3</a></li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,142 @@
+@import './button.less';
+@import './variables.less';
+@import './general.less';
+@import './colors.less';
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    color: @text-color;
+    overflow: hidden;
+}
+
+html body {
+    background-color: white;
+    font-family: @font-family-text;
+    font-size: @font-size-base;
+    letter-spacing: normal;
+    color: @text-color;
+}
+
+.loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    margin: -25px 0 0 -25px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 1s linear infinite;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #555;
+    border-radius: 50%;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    color: @heading-color;
+    line-height: 1.2;
+    font-family: @font-family-heading;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: @font-weight-semi-bold;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: @font-size-base;
+    font-weight: @font-weight-semi-bold;
+}
+
+@media (max-width: 800px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    h5 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+p, span, a, input, textarea {
+    color: inherit;
+    font-size: inherit;
+    font-family: @font-family-text;
+}
+
+p, input, textarea {
+    font-size: @font-size-base;
+    color: @text-color;
+}
+
+a {
+    color: @color-one;
+    cursor: pointer;
+    font-weight: @font-weight-semi-bold;
+    font-family: @font-family-text;
+
+    &:hover,
+    &:active {
+        color: @color-two;
+        text-decoration: none;
+    }
+}
+
+ul, li {
+    list-style: none;
+}

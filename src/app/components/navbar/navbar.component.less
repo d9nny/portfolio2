@@ -1,0 +1,110 @@
+@import './../../../styles/styles.less';
+
+.navbar(@bg-color, @txt-color) {
+    background-color: @bg-color;
+    height: @navbar-height;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    .navbar-brand {
+        a {
+            color: @txt-color;
+        }
+    }
+
+    .navbar-toggler {
+        color: @txt-color;
+        i {
+            font-size: 20px;
+        }
+    }
+
+    .overlay {
+        background-color: fade(@color-one, 95);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .collapse {
+        .navbar-nav {
+            .nav-item {
+                border-bottom: 2px solid transparent;
+                padding-left: .75rem;
+                padding-right: .75rem;
+
+                .nav-link {
+                    color: @txt-color;
+                }
+
+                &:hover,
+                &.active {
+                    border-bottom: 2px solid @color-two;
+
+                    .nav-link {
+                        color: @color-two;
+                    }
+                }
+            }
+        }
+
+        &.show {
+            background-color: #fff;
+            color: blue;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 100px;
+            right: 0;
+
+            .navbar-brand {
+                margin: 30px auto;
+                text-align: center;
+                width: 100%;
+
+                a {
+                    color: @color-two;
+                }
+            }
+
+            .navbar-nav {
+                .nav-item {
+                    border-bottom: 1px solid @off-white-2;
+                    border-left: 2px solid transparent;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+
+                    .nav-link {
+                        color: @text-color;
+                        padding: 10px 20px;
+                    }
+
+                    &.active {
+                        border-left: 2px solid @color-two;
+                        background-color: @off-white-1;
+
+                        .nav-link {
+                            color: @color-two;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width : 800px) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+.navbar.transparent {
+    .navbar(transparent, #fff);
+}
+
+.navbar.solid {
+    .navbar(#fff, @text-color);
+}
+

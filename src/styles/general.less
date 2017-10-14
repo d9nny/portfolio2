@@ -1,0 +1,85 @@
+@import './styles.less';
+
+.scroll() {
+    overflow: auto;
+
+    // hidden scrollbar
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 9px;
+        height: 9px;
+        background: transparent url(/assets/images/shared/transparent-bg.png) repeat-y !important;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 9px;
+        border: 2px solid transparent;
+        background-clip: padding-box;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    // reveal scrolbar on hover
+    &:hover {
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, .5);
+
+            // make the scrollbar bigger when hovering it
+            &:hover {
+                border: 0;
+            }
+        }
+    }
+}
+
+.section {
+    padding: 75px 0;
+
+    .title-container {
+        margin: 30px 0;
+        text-align: center;
+
+        .heading {
+            margin-bottom: 20px;
+        }
+
+        .sub-heading {
+            margin-bottom: 0;
+        }
+    }
+
+    .content-container {
+        margin: 30px 0;
+
+        .image {
+            img {
+                width: 100%;
+                box-shadow: @box-shadow-base;
+            }
+        }
+    }
+
+    .link-container {
+        margin-top: 50px;
+        text-align: center;
+
+        a {
+            font-size: 18px;
+        }
+    }
+}
+
+.bg-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    box-shadow: @box-shadow-base;
+    border: none !important;
+    padding: 25px;
+}
