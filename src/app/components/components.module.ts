@@ -5,7 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { NavbarComponent } from './navbar/navbar.component';
 
-import { NavbarService } from './navbar/navbar-service/navbar.service';
+import { NavbarService } from './navbar/service/navbar.service';
 
 const components = [
     NavbarComponent,

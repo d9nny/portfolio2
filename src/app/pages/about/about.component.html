@@ -1,15 +1,4 @@
-<section class="section bg-image"
-         id="header-section">
-    <div class="overlay">
-        <div class="container">
-            <div class="row justify-content-center vertical-align">
-                <div class="col-11 col-md-11 title-container">
-                    <h1>{{ typewriterDisplay }}<span [ngClass]="{'blinking-cursor': blinkingCursor}">|</span></h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<app-about-header (nextSection)="nextSection($event)"></app-about-header>
 
 <section class="section"
          id="skills-section">
@@ -20,21 +9,54 @@
             </div>
         </div>
         <div class="row vertical-align">
-            <div class="col-12 col-md-4 content-container">
-                <img src="/assets/images/about/lightbulb_idea.svg">
-                <h2 class="title">Ideas</h2>
-                <p>I'm a creative guy with an entrepreneurial spirit. I love coming up with ideas and brainstorming with the team.</p>
-            </div>
-            <div class="col-12 col-md-4 content-container">
-                <img src="/assets/images/about/graphic_design.svg">
-                <h2 class="title">UX / UI</h2>
-                <p>With strong user empathy, I always take a user centric approach when designing new features and UI's.</p>
-            </div>
-            <div class="col-12 col-md-4 content-container">
-                <img src="/assets/images/about/laptop.svg">
-                <h2 class="title">Develop</h2>
-                <p>I love to code and bring designs to life. I'm a Front-end developer at heart, but happy to venture into the back.</p>
+            <div *ngFor="let skill of skills"
+                 class="col-12 col-md-4 content-container">
+                <img src="/assets/images/about/{{ skill.img }}">
+                <h3 class="title">{{ skill.title }}</h3>
+                <p>{{ skill.description }}</p>
             </div>
         </div>
     </div>
 </section>
+
+<section class="section bg-off-white-1"
+         id="technologies-section">
+    <div class="container">
+        <div class="row justify-content-center vertical-align">
+            <div class="col-11 col-md-10 title-container">
+                <h1>My technologies</h1>
+            </div>
+        </div>
+        <div class="row content-container">
+            <div *ngFor="let tech of technologies; let i = index "
+                 [@changeVisibility]="tech.state"
+                 class="technology-container col-6 {{ tech.col }} vertical-align">
+                <img src="/assets/images/about/technologies/{{ tech.img }}">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 
+<section class="section bg-off-white-1"
+         id="about-section">
+    <div class="container">
+        <div class="row justify-content-center vertical-align">
+            <div class="col-12 col-md-6">
+                <div class="title-container">
+                    <h2>About me</h2>
+                </div>
+                <div class="content-container">
+                    
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="title-container">
+                    <h1>Experience</h1>
+                </div>
+                <div class="content-container">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->

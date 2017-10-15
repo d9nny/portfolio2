@@ -6,17 +6,21 @@
         <a href="/">< Dan Wheeler /></a>
     </div>
 
-    <button class="btn navbar-toggler navbar-toggler-right"
+    <a class="navbar-toggler navbar-toggler-right"
         (click)="isCollapsed = !isCollapsed">
         <i class="fa fa-bars"></i>
-    </button>
+    </a>
 
     <div *ngIf="isCollapsed"
          class="overlay"></div>
 
     <div class="collapse navbar-collapse"
          [ngbCollapse]="!isCollapsed">
-
+        <a *ngIf="isCollapsed"
+           class="close"
+           (click)="isCollapsed = !isCollapsed">
+           <i class="fa fa-times"></i>
+        </a>
         <div *ngIf="isCollapsed"
              class="navbar-brand">
             <a href="/">< Dan Wheeler /></a>

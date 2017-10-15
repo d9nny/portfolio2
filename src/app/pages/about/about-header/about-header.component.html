@@ -1,0 +1,22 @@
+<section class="section bg-image"
+         id="header-section">
+    <div class="overlay">
+        <div class="container">
+            <div class="row justify-content-center vertical-align">
+                <div class="col-11 title-container">
+                    <h1 *ngIf="headerTextsIndex !== headerTexts.length -1"
+                        class="intro-title">Hello, I'm</h1>
+                    <h1 class="type-writer"
+                        [ngClass]="{'text-center': headerTextsIndex === headerTexts.length -1}">
+                        {{ typewriterDisplay }}<span [ngClass]="{'blinking-cursor': blinkingCursor}">|</span>
+                    </h1>
+                    <div class="link-container">
+                        <a *ngIf="lastHeaderText"
+                           (click)="emitNextSection('skills-section')"
+                           translate><i class="fa fa-chevron-down"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

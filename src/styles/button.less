@@ -7,70 +7,6 @@
     outline: none !important;
 }
 
-.btn-variant(@background, @text) {
-    border-radius: 3px;
-    cursor: pointer;
-    color: @text;
-    background-color: @background;
-    border-color: darken(@background, 3%);
-    box-shadow: 0 1px 7px fade(@background, 30%);
-
-    span {
-        color: @text;
-    }
-
-    &:disabled {
-        background-color: @background;
-        border-color: darken(@background, 3%);
-        box-shadow: 0 1px 7px fade(@background, 30%);
-        cursor: not-allowed;
-        opacity: .3;
-
-        span {
-            color: @text;
-        }
-    }
-
-    &:hover:enabled,
-    &:focus:enabled {
-        color: @text;
-        background-color: darken(@background, 3%);
-        border-color: darken(@background, 3%);
-        box-shadow: 0 3px 13px fade(@background, 50%);
-
-        span {
-            color: @text;
-        }
-    }
-}
-
-.btn-outline-variant(@color, @border-color: @color) {
-    color: @color;
-    border: 2px solid @border-color;
-    background-color: transparent;
-    box-shadow: 0 1px 5px fade(@color, 30%);
-    cursor: pointer;
-    font-weight: @font-weight-semi-bold;
-
-    &:disabled {
-        color: @color;
-        border: 2px solid @border-color;
-        background-color: transparent;
-        box-shadow: 0 1px 5px fade(@color, 30%);
-        cursor: not-allowed;;
-        opacity: .3;
-    }
-
-    &:hover:enabled,
-    &:focus:enabled {
-        color: darken(@color, 10%);
-        border: 2px solid darken(@border-color, 10%);
-        box-shadow: none;
-        background-color: transparent;
-        box-shadow: 0 3px 10px fade(@color, 40%);
-    }
-}
-
 .btn-gradient-variant(@color1, @color2) {
     .bg-gradient(@color1, @color2);
     border-radius: 2rem;
@@ -99,32 +35,6 @@
 button {
     text-transform: uppercase;
     letter-spacing: 1px;
-
-    &.btn-default {
-        .btn-variant(@grey-light, @text-color);
-    }
-    &.btn-one {
-        .btn-variant(@color-one, white);
-    }
-    &.btn-two {
-        .btn-variant(@color-two, white);
-    }
-    &.btn-success {
-        .btn-variant(@color-success, white);
-    }
-
-    &.btn-outline-default {
-        .btn-outline-variant(@text-color);
-    }
-    &.btn-outline-one {
-        .btn-outline-variant(@color-one);
-    }
-    &.btn-outline-two {
-        .btn-outline-variant(@color-two);
-    }
-    &.btn-outline-success {
-        .btn-outline-variant(@color-success);
-    }
 
     &.btn-gradient-one {
         .btn-gradient-variant(@color-one, @color-two);

@@ -8,14 +8,16 @@
 
     .navbar-brand {
         a {
-            color: @txt-color;
+            color: @color-three;
         }
     }
 
     .navbar-toggler {
-        color: @txt-color;
+        color: @color-three;
+        padding-left: 0;
+        padding-right: 0;
         i {
-            font-size: 20px;
+            font-size: 30px;
         }
     }
 
@@ -41,18 +43,24 @@
 
                 &:hover,
                 &.active {
-                    border-bottom: 2px solid @color-two;
+                    border-bottom: 2px solid @color-three;
 
                     .nav-link {
-                        color: @color-two;
+                        color: @color-three;
                     }
                 }
             }
         }
 
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 18px;
+            font-size: 30px;
+        }
+
         &.show {
             background-color: #fff;
-            color: blue;
             position: fixed;
             top: 0;
             bottom: 0;
@@ -60,12 +68,12 @@
             right: 0;
 
             .navbar-brand {
-                margin: 30px auto;
+                margin: 80px auto 30px;
                 text-align: center;
                 width: 100%;
 
                 a {
-                    color: @color-two;
+                    color: @color-three;
                 }
             }
 
@@ -75,6 +83,7 @@
                     border-left: 2px solid transparent;
                     padding-left: 1rem;
                     padding-right: 1rem;
+                    margin: 0;
 
                     .nav-link {
                         color: @text-color;
@@ -82,11 +91,11 @@
                     }
 
                     &.active {
-                        border-left: 2px solid @color-two;
+                        border-left: 2px solid @color-three;
                         background-color: @off-white-1;
 
                         .nav-link {
-                            color: @color-two;
+                            color: @color-three;
                         }
                     }
                 }
@@ -95,8 +104,13 @@
     }
 
     @media (max-width : 800px) {
+        height: @navbar-mob-height;
         padding-left: 1rem;
         padding-right: 1rem;
+
+        .navbar-brand {
+            padding-top: 7px;
+        }
     }
 }
 
@@ -110,7 +124,7 @@
 
     .navbar-brand {
         a {
-            color: @color-two;
+            color: @color-three;
         }
     }
 }

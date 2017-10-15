@@ -7,6 +7,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ComponentsModule } from '../components/components.module';
 
 import { AboutComponent } from './about/about.component';
+import { AboutHeaderComponent } from './about/about-header/about-header.component';
+
+import { AboutService } from './about/service/about.service';
 
 const routes: Routes = [
     { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -22,9 +25,11 @@ const routes: Routes = [
         RouterModule.forChild(routes),
     ],
     providers: [
+        AboutService,
     ],
     declarations: [
         AboutComponent,
+        AboutHeaderComponent,
     ]
 })
 export class PagesModule { }
